@@ -1,12 +1,52 @@
-# React + Vite
+CareerHive App
+CareerHive is a job application tracking and management platform. It allows users to browse job listings, apply for jobs, and track their applications. The app is built using React, Zustand for state management, and React Router for navigation.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Job Listings: View a list of available jobs with details such as title, company, location, and type.
+Job Applications: Apply for jobs and track your applications.
+Authentication: Login functionality to access protected routes like the dashboard and applications.
+State Management: Uses Zustand for managing job data, filters, and application state.
+Dynamic Routing: Protected routes for authenticated users and dynamic job details routing.
+Installation
+Clone the repository:
 
-Currently, two official plugins are available:
+Install dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Start the development server:
 
-## Expanding the ESLint configuration
+Open the app in your browser:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+File Structure
+State Management
+The app uses Zustand for state management. The jobStore.js file manages the following:
+
+Jobs: Preloaded mock job data.
+Filters: Keyword, location, and type filters for job listings.
+Applications: Tracks jobs the user has applied for.
+Routes
+Route	Description	Access
+/	Home page	Public
+/login	Login page	Public
+/dashboard	Dashboard for authenticated users	Protected
+/apply/:id	Job application form for a specific job	Protected
+Mock Data
+The app uses mock job data defined in jobStore.js:
+
+How to Use
+Login:
+
+Use the login page to authenticate. Mock authentication is implemented using localStorage.
+Browse Jobs:
+
+Navigate to the job listings page to view available jobs.
+Apply for Jobs:
+
+Click on a job to view its details and apply using the application form.
+Track Applications:
+
+View your applied jobs in the dashboard.
+Technologies Used
+React: Frontend framework.
+Zustand: State management.
+React Router: Navigation and routing.
+Bootstrap: UI components and styling.
