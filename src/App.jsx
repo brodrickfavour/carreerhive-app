@@ -5,10 +5,12 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import AppNavbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 
-// Mock auth check
+// Mock authentication check
 const isAuthenticated = () => {
   return !!localStorage.getItem("user");
 };
@@ -21,16 +23,18 @@ const PrivateRoute = ({ children }) => {
 const App = () => {
   return (
     <Router>
+      <AppNavbar />
       <Routes>
-        {/* Public route */}
+        {/* Public routes */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
 
-        {/* Protected route */}
+        {/* Protected routes */}
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <PrivateRoute>
-              <Home />
+              <Dashboard />
             </PrivateRoute>
           }
         />
