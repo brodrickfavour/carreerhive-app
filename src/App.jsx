@@ -9,6 +9,7 @@ import AppNavbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import { SpeedInsights } from "@vercel/speed-insights/react"; // Import SpeedInsights
 
 // Mock authentication check
 const isAuthenticated = () => {
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <Router>
       <AppNavbar />
+      <SpeedInsights /> {/* Add SpeedInsights here */}
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<Home />} />
